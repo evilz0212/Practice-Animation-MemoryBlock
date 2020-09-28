@@ -1,0 +1,5 @@
+:root
+    // $var-HEX -> --var-RGBA
+    // 配合 color-var() 使用
+    @each $name, $color in $colors
+        --#{$name}: #{red($color), green($color), blue($color)}

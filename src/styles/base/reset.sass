@@ -1,0 +1,33 @@
+html
+    // 取消邊界重疊
+    box-sizing: border-box
+
+*, *:before, *:after
+    // 繼承取消邊界重疊
+    box-sizing: inherit
+
+body
+    // 字體顯示優化
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+    font-family: "roboto"
+
+#app
+    // 適應視窗大小
+    min-height: 100vh
+    min-width: 100vw
+    max-width: 100vw
+
+    background-color: color(basic-black)
+
+    +flex(c, c, col)
+    padding: 0
+    margin: 0
+
+    border: 5px solid color(basic-white, 0.05)
+
+    transition: 0.3s
+    &:active
+        transition: 0s
+        border-color: color(basic-white, 0.1)
