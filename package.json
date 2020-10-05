@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "git-pages": "build && git subtree push --prefix dist origin gh-pages"
+        "git-pages": "vite build && git subtree push --prefix dist origin gh-pages"
     },
     "dependencies": {
         "vue": "^3.0.0"
