@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "git-pages": "git subtree split --prefix dist -b gh-pages && git push origin gh-pages"
     },
     "dependencies": {
         "vue": "^3.0.0"
