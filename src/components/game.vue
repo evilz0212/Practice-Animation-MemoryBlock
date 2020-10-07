@@ -3,6 +3,7 @@
     h2 Practice
     h1 Memory<br>Block
     h3.status -
+    .startBtn(@click="startGame") 開始遊戲
 .blocks
     .row
         .block.block1
@@ -15,6 +16,13 @@
 </template>
 
 <script setup>
+// TODO: Game Class 改為全局載入
+import Game from "/@/plugins/game.js";
+
+export const startGame = () => {
+    var game = new Game();
+    game.startLevel();
+};
 </script>
 
 <style lang="sass" scoped>
@@ -58,4 +66,18 @@ h3
 
     &.correct .circle
         background-color: color(block-blue)
+
+.startBtn
+    +flex()
+
+    +size(100px, 30px)
+
+    border: 1px solid color(basic-white)
+    border-radius: 6px
+
+    &:hover
+        color: color(basic-black)
+        background-color: color(basic-white)
+
+        cursor: pointer
 </style>

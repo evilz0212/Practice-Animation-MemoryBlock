@@ -1,6 +1,8 @@
-import "/@/styles/index.sass";
+import "/@/styles/index.sass"
 
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from "vue"
+import App from "./App.vue"
+// import plugins from "/@/plugins"
 
-createApp(App).mount("#app");
+const vue = createApp(App)
+vue.mount("#app")
