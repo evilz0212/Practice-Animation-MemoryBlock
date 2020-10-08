@@ -1,16 +1,16 @@
 <template lang="pug">
-.infos
+.infos.fadeIn.animated
     h2 Practice
     h1 Memory<br>Block
     h3.status -
-    .startBtn(@click="startGame") 開始遊戲
-.blocks
+    .startBtn(@click="startGame()") 開始遊戲
+.blocks.fadeIn.animated
     .row
-        .block.block1
-        .block.block2
+        .block.block1(@click="playBlock('1')")
+        .block.block2(@click="playBlock('2')")
     .row
-        .block.block3
-        .block.block4
+        .block.block3(@click="playBlock('3')")
+        .block.block4(@click="playBlock('4')")
     .row
         .inputStatus
 </template>
@@ -18,14 +18,19 @@
 <script setup>
 // TODO: Game Class 改為全局載入
 import Game from "/@/plugins/game.js";
+var game = "";
 
-export const startGame = () => {
-    var game = new Game();
+export function startGame() {
+    game = new Game();
     game.startLevel();
-};
+}
+
+export function playBlock(char) {
+    game.userSendInput(char);
+}
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .infos
     position: absolute
     left: 40px

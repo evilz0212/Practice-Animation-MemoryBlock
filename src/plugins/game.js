@@ -12,7 +12,6 @@ export default class Game {
     }
 
     // 開始關卡
-    // FIX: 未開始開始關卡
     startLevel() {
         this.showMessage("Level: " + this.currentLevel)
         this.startGame(this.levels[this.currentLevel])
@@ -86,5 +85,31 @@ export default class Game {
     startUserInput() {
         this.userInput = ""
         this.mode = "userInput"
+    }
+
+    // 使用者彈奏
+    userSendInput(inputChar) {
+        if (this.mode == "userInput") {
+            let tempString = this.userInput + inputChar
+            this.playNote(inputChar)
+            this.showStatus(tempString)
+
+            if (this.answer.indexOf(tempString) == 0) {
+                if (this.answer == tempString) {
+                    this.currentLevel += 1
+                    this.mode = "waiting"
+                    setTimeout(() => {
+                        this.startLevel()
+                    }, 1000)
+                }
+                this.userInput += inputChar
+            } else {
+                this.currentLevel = 0
+                this.mode = "reset"
+                setTimeout(() => {
+                    this.startLevel()
+                }, 1000)
+            }
+        }
     }
 }
