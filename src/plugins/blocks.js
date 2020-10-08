@@ -1,5 +1,9 @@
 export default class Blocks {
     constructor(blockAssign, setAssign) {
+        // 音頻模塊（消除 Safari 播放延遲）
+        const AudioContext = window.AudioContext || window.webkitAudioContext
+        const audioCtx = new AudioContext()
+
         this.allOn = false
         this.blocks = blockAssign.map((data, index) => ({
             name: data.name,

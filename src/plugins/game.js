@@ -76,7 +76,6 @@ export default class Game {
     }
 
     // 播放音符
-    // FIX: 無法彈奏
     playNote(note) {
         this.blocks.flash(note)
     }
