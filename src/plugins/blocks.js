@@ -18,7 +18,7 @@ export default class Blocks {
 
     // 取得聲音物件
     getAudioObject(pitch) {
-        var audio = new Audio("/sounds/" + pitch + ".mp3")
+        var audio = new Audio(`/sounds/${pitch}.mp3`)
         audio.setAttribute("preload", "auto")
         return audio
     }
