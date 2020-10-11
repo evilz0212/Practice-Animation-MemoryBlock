@@ -23,7 +23,6 @@ class Game {
         this.mode = "gamePlay"
         this.answer = answer
         let notes = this.answer.split("")
-
         this.showStatus("")
         this.timer = setInterval(() => {
             let char = notes.shift()
@@ -55,6 +54,7 @@ class Game {
 
         // 完成！
         if (tempString == this.answer) {
+            this.mode = "corrent"
             $(".inputStatus").addClass("corrent")
             this.showMessage("Corrent!")
             setTimeout(() => {
@@ -68,6 +68,7 @@ class Game {
         }
         // 輸入錯誤
         if (this.answer.indexOf(tempString) != 0) {
+            this.mode = "wrong"
             this.showMessage("Wrong...")
             $(".inputStatus").addClass("wrong")
             this.blocks.turnOnAll()
@@ -89,7 +90,6 @@ class Game {
     }
 
     // 使用者彈奏
-    // FIX: 播放期間輸入，播放聲音會不正常
     userSendInput(inputChar) {
         if (this.mode == "userInput") {
             let tempString = this.userInput + inputChar

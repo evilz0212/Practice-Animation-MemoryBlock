@@ -51,6 +51,7 @@ h3
 
 .inputStatus
     margin-top: 10px
+    height: 20px
 
     .circle
         +size(6px)

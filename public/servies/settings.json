@@ -6,7 +6,7 @@
             { "selector": ".block4", "name": "4", "pitch": "4" }
         ],
     "setAssign": [
-            { "name": "correct", "sets": [1, 3, 5, 8] },
+            { "name": "corrent", "sets": [1, 3, 5, 8] },
             { "name": "wrong", "sets": [2, 4, 5.5, 7] }
         ],
     "levels": [
