@@ -1,5 +1,5 @@
 import Blocks from "./blocks"
-import { blockAssign, setAssign, levels } from "./setting.js"
+import { blockAssign, setAssign, levels } from "/servies/settings.json"
 
 class Game {
     constructor() {
