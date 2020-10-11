@@ -16,17 +16,14 @@
 </template>
 
 <script setup>
-// TODO: Game Class 改為全局載入
 import Game from "/@/plugins/game.js";
-var game = "";
 
 export function startGame() {
-    game = new Game();
-    game.startLevel();
+    Game.startLevel();
 }
 
 export function playBlock(char) {
-    game.userSendInput(char);
+    Game.userSendInput(char);
 }
 </script>
 

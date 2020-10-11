@@ -1,8 +1,7 @@
 import path from "path"
-const packageJson = require("./package.json")
 
 export default {
-    base: "/" + packageJson.name + "/",
+    base: "",
     alias: {
         // JS import 取代為絕對路徑
         "/@/": path.resolve(__dirname, "./src"),

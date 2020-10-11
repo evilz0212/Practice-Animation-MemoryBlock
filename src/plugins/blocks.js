@@ -1,6 +1,7 @@
 export default class Blocks {
     constructor(blockAssign, setAssign) {
         // 音頻模塊（消除 Safari 播放延遲）
+        // FIX: 播放延遲（改用 Web Audio API，非H TML5 <audio></audio>）
         const AudioContext = window.AudioContext || window.webkitAudioContext
         const audioCtx = new AudioContext()
 
@@ -18,7 +19,7 @@ export default class Blocks {
 
     // 取得聲音物件
     getAudioObject(pitch) {
-        var audio = new Audio(`/sounds/${pitch}.mp3`)
+        const audio = new Audio(`sounds/${pitch}.mp3`)
         audio.setAttribute("preload", "auto")
         return audio
     }
@@ -55,6 +56,7 @@ export default class Blocks {
 
     // 播放序列聲音
     playSet(type) {
+        // FIX: 出現非物件錯誤（不明原因）
         this.soundSets
             .find((set) => set.name == type)
             .sets.forEach((o) => {

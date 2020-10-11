@@ -1,9 +1,11 @@
 import Blocks from "./blocks"
 import { blockAssign, setAssign, levels } from "./setting.js"
 
-export default class Game {
+class Game {
     constructor() {
-        this.blocks = new Blocks(blockAssign, setAssign)
+        window.onload = () => {
+            this.blocks = new Blocks(blockAssign, setAssign)
+        }
         this.levels = levels
 
         this.currentLevel = 0
@@ -87,6 +89,7 @@ export default class Game {
     }
 
     // 使用者彈奏
+    // FIX: 播放期間輸入，播放聲音會不正常
     userSendInput(inputChar) {
         if (this.mode == "userInput") {
             let tempString = this.userInput + inputChar
@@ -112,3 +115,5 @@ export default class Game {
         }
     }
 }
+
+export default new Game()
