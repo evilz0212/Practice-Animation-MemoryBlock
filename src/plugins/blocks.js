@@ -56,7 +56,6 @@ export default class Blocks {
 
     // 播放序列聲音
     playSet(type) {
-        // FIX: 出現非物件錯誤（不明原因）
         console.log(this.soundSets)
         this.soundSets
             .find((set) => set.name == type)

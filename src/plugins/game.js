@@ -15,6 +15,7 @@ class Game {
 
     // 開始關卡
     startLevel() {
+        this.mode = "gamePlay"
         this.showMessage("Level: " + this.currentLevel)
         this.startGame(this.levels[this.currentLevel])
     }
