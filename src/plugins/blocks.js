@@ -1,7 +1,7 @@
 export default class Blocks {
     constructor(blockAssign, setAssign) {
         // 音頻模塊（消除 Safari 播放延遲）
-        // FIX: 播放延遲（改用 Web Audio API，非H TML5 <audio></audio>）
+        // TODO: 播放延遲（改用 Web Audio API，非H TML5 <audio></audio>）
         const AudioContext = window.AudioContext || window.webkitAudioContext
         const audioCtx = new AudioContext()
 
