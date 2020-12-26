@@ -13,6 +13,7 @@
 ![memoryblock](./public/preview.png)
 
 ## Overview
+> JS 節奏記憶小遊戲，跟著提示點擊相同順序的方塊，失誤將回到第一關重新開始
 
 -   ES6：prototype \ class 物件導向、import \ export 模塊化、字串模板語法
 -   vite：全局載入樣式、打包編譯路徑
